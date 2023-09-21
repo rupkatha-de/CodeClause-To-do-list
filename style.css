@@ -1,0 +1,32 @@
+.container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  header {
+    color: #000;
+  }
+  
+  input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  ul {
+    margin-top: 10px;
+  }
+  
+  li {
+    border-radius: 5px;
+  }
+  
+  .completed {
+    color: #ccc;
+  }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do List</title>
+<style>
+body {
+
+  background: linear-gradient(to right, #e78803, #d6cbae);
+  
+  font-family: sans-serif;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  font-size: 24px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>To-Do List</header>
+  <input type="text" id="newTask" placeholder="Add a new task...">
+  <button type="button" id="addTask">Add</button>
+  <ul id="tasks"></ul>
+</div>
+
+<script>
+const addTaskButton = document.querySelector('#addTask');
+const tasksList = document.querySelector('#tasks');
+
+addTaskButton.addEventListener('click', () => {
+  const newTask = document.querySelector('#newTask').value;
+
+  if (newTask) {
+    const taskElement = document.createElement('li');
+    taskElement.textContent = newTask;
+
+    tasksList.appendChild(taskElement);
+
+    document.querySelector('#newTask').value = '';
+  }
+});
+
+tasksList.addEventListener('click', (event) => {
+  const taskElement = event.target;
+
+  if (taskElement.classList.contains('completed')) {
+    taskElement.classList.remove('completed');
+  } else {
+    taskElement.classList.add('completed');
+  }
+});
+</script>
+</body>
+</html>
